@@ -1,6 +1,6 @@
 import uvicorn
 
-
+# levanta la interfaz del usuario
 if __name__ == "__main__":
     print("Host: ")
     host = input()

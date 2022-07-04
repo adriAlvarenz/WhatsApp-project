@@ -2,6 +2,10 @@ import uvicorn
 import json
 import os
 
+#Este codigo es para cargar el servidor
+
+#Se recibe el ip del servidor y el puerto
+#Password debe ser la misma del servidor al que uno se quiera conectar
 if __name__ == "__main__":
     print('Host: ')
     host = input()
@@ -10,6 +14,7 @@ if __name__ == "__main__":
     print('Password: ')
     password = input()
 
+#Se prepara la tabla de conexion
     data = {}
     data['seconds'] = ""
     data['password'] = password    
@@ -21,6 +26,7 @@ if __name__ == "__main__":
     with open('./connections.json', 'w') as file:
         json.dump(data, file)
 
+#Se preparan los archivos de almacenamiento de informacion.
     data = {}
     data["users"] = []
     with open('./personal_data.json', 'w') as file_p:
@@ -28,6 +34,7 @@ if __name__ == "__main__":
     with open('./inherited_data.json', 'w') as file_h:
         json.dump(data, file_h)
 
+#Se corre el servidor
     uvicorn.run("server:connection_servers", host=host, port=int(port), reload=True)    
     
 

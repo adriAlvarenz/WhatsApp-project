@@ -1,6 +1,6 @@
 import uvicorn
 
-
+#levanta el servicio que se utiliza para el ping
 if __name__ == "__main__":
     print("Host: ")
     host = input()
